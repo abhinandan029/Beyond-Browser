@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Universal Access Layer",
+  "version": "0.2.0",
+  "description": "Accessible guidance for complex government services.",
+  "permissions": ["sidePanel", "activeTab", "scripting", "storage", "tabs"],
+  "host_permissions": [
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "background": { "service_worker": "background/service-worker.js" },
+  "side_panel": { "default_path": "sidepanel/index.html" },
+  "action": { "default_title": "Open Universal Access Layer" },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost/*", "http://127.0.0.1/*"],
+      "js": ["content/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

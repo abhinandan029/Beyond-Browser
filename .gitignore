@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+frontend/dist/
+extension/sidepanel/assets/
+backend/app/ual.sqlite3
+.env
+backend/ual.sqlite3
+frontend/tsconfig.tsbuildinfo
+**/__pycache__/
+
